@@ -1,0 +1,78 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f4f4f4;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.top-nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.top-nav-brand {
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.top-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.top-nav-links a {
+  color: #606c71;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.top-nav-links a:hover {
+  color: #267CB9;
+  text-decoration: underline;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+/* Offset anchored sections so the sticky nav doesn't cover headings */
+#home,
+#about-me,
+#resume,
+#portfolio {
+  display: block;
+  position: relative;
+  top: -70px;
+  visibility: hidden;
+}
+
+@media print, screen and (max-width: 960px) {
+  .top-nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
